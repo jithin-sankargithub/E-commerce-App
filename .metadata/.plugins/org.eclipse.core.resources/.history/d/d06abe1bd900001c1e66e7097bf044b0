@@ -1,0 +1,43 @@
+package com.shopping.userservice.resource;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.shopping.userservice.model.UserProfile;
+import com.shopping.userservice.service.UserProfileServiceImpl;
+
+@RestController
+public class UserProfileController {
+	
+	
+	@Autowired
+	private UserProfileServiceImpl userService;
+	
+	@PostMapping("/addcustomer")
+	public UserProfile addNewCustomerProfile(@RequestBody UserProfile userProfile) {
+		return userService.addNewCustomerProfile(userProfile);
+	}
+	
+	@PostMapping("/addMerchant")
+	public UserProfile addNewMerchantProfile(@RequestBody UserProfile userProfile) {
+		return userService.addNewCustomerProfile(userProfile);
+	}
+	
+	@GetMapping("/viewusers")
+	public List<UserProfile> viewAllUsers(){
+		return userService.viewAllUsers();
+	}
+	
+	@PostMapping("/edituser/{profileId}")
+	public UserProfile editUser(@PathVariable String profileId) {
+		return userService.updateProfile(profileId);
+	}
+
+
+}

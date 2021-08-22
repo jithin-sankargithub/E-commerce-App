@@ -1,0 +1,5 @@
+package com.shopping.userservice.model;
+
+public class ProfileRepository {
+
+}

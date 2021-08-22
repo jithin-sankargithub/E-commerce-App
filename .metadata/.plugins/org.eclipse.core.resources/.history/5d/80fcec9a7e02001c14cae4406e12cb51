@@ -1,0 +1,5 @@
+package com.shopping.productservice.resource;
+
+public class ProductsController {
+
+}

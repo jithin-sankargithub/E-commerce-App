@@ -1,0 +1,10 @@
+package com.shopping.userservice.service;
+
+public interface ProfileServiceImpl {
+	
+//	public UserProfile addNewCustomerProfile(UserProfile userProfile);
+//	public UserProfile getByProfileId(int profileId);
+//	public UserProfile updateProfile(int profileId);
+//	public UserProfile getByUserName(String name);
+
+}

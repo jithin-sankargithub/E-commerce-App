@@ -1,0 +1,14 @@
+package com.shopping.userservice.service;
+
+import com.shopping.userservice.model.UserProfile;
+
+public interface UserProfileService {
+	
+	public UserProfile addNewCustomerProfile(UserProfile userProfile);
+	public UserProfile getByProfileId(String profileId);
+	public UserProfile updateProfile(String profileId);
+	public UserProfile getByUserName(String name);
+	public UserProfile addNewMerchantProfile(UserProfile userprofile);
+	public String deleteUser(String profileId);
+
+}

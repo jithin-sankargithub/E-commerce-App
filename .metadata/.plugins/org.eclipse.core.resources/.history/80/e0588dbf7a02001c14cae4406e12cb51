@@ -1,0 +1,12 @@
+package com.shopping.productservice.service;
+
+import com.shopping.productservice.model.Product;
+
+;
+
+public interface ProductService {
+	
+	public String addProduct(Product product);
+	public Product getProductById(String id);
+
+}

@@ -1,0 +1,15 @@
+package com.shopping.userservice.model;
+
+public class UserProfile {
+	
+	private int profileId;
+	private String fullName;
+	private String password;
+	private String email;
+	private String mobileNo;
+	private Address address;
+	private String role;
+
+	
+
+}

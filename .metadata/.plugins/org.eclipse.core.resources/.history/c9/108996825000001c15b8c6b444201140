@@ -1,0 +1,5 @@
+package com.shopping.userservice.repository;
+
+public class ProfileRepository extends MongoRepository<UserProfile,> {
+
+}

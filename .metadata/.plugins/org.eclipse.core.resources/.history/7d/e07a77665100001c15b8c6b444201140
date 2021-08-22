@@ -1,0 +1,7 @@
+package com.shopping.userservice.repository;
+
+import org.springframework.data.mongodb.repository.cdi.MongoRepositoryBean;
+
+public class ProfileRepository {
+
+}
