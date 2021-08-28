@@ -1,5 +1,0 @@
-package com.shopping.userservice.repository;
-
-public interface ProfileRepository {
-
-}

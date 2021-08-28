@@ -1,5 +1,0 @@
-package com.shopping.userservice.resource;
-
-public class UserProfileController {
-
-}
