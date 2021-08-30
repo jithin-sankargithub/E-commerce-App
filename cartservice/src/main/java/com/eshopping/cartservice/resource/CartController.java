@@ -17,6 +17,8 @@ import com.eshopping.cartservice.model.Cart;
 import com.eshopping.cartservice.model.OrderCheckout;
 import com.eshopping.cartservice.service.CartServiceImpl;
 
+import io.swagger.annotations.ApiOperation;
+
 
 
 @RestController
@@ -28,6 +30,8 @@ public class CartController {
 	CartServiceImpl cartServiceImpl;
 	
 	@PostMapping("/newcart")
+	@ApiOperation(value = "Creating a user cart",
+	notes = "Creates a cart for the customer")
 	public void createNewCart(@RequestBody Cart cart) {
 		System.out.println(cart);
 		cartServiceImpl.createNewCart(cart);
@@ -35,11 +39,15 @@ public class CartController {
 	}
 	
 	@GetMapping("/getcartbyuserid/{userId}")
+	@ApiOperation(value = "Retrieve a cart by userId",
+	notes = "Retrieve the cart of the user by providing the userId")
 	public Optional<Cart> findCartByUserId(@PathVariable("userId") String userId) {
 		return cartServiceImpl.findCartByUserId(userId);
 	}
 	
 	@PostMapping("/checkout")
+	@ApiOperation(value = "Proceeding to checkout",
+	notes = "Customer can confirm the order and proceed to checkout")
 	public ResponseEntity<String> checkout(@RequestBody OrderCheckout orderCheckout) throws PaymentException{
 		return cartServiceImpl.checkout(orderCheckout);
 	}

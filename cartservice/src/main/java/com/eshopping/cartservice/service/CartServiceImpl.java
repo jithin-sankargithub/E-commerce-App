@@ -31,6 +31,12 @@ public class CartServiceImpl implements CartService{
 
 	@Override
 	public void createNewCart(Cart cart) {
+		Optional<Cart> customerCart = this.findCartByUserId(cart.getUserId());
+		if(customerCart.isPresent()) {
+			Cart existingCart = customerCart.get();
+			cart.setId(existingCart.getId());
+			cartRepository.save(cart);
+		}
 		cartRepository.save(cart);
 		
 	}

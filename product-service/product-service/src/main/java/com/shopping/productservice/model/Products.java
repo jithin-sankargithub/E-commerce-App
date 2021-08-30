@@ -3,15 +3,23 @@ package com.shopping.productservice.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+@ApiModel(description = "Details about the product")
 @Document(collection="Products")
 public class Products {
 	
 	@Id
 	private String id;
+	@ApiModelProperty(notes = "The name of the product")
 	private String name;
+	@ApiModelProperty(notes = "The category of the product")
 	private String category;
+	@ApiModelProperty(notes = "The description of the product")
 	private String description;
+	@ApiModelProperty(notes = "The price of the product")
 	private double price;
+	@ApiModelProperty(notes = "The image of the product")
 	private String image;
 	
 	
@@ -88,6 +96,13 @@ public class Products {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Products [id=" + id + ", name=" + name + ", category=" + category + ", description=" + description
+				+ ", price=" + price + ", image=" + image + "]";
 	}
 	
 	

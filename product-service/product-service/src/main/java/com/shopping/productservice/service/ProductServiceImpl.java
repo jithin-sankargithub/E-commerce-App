@@ -23,7 +23,9 @@ public class ProductServiceImpl {
 	}
 	
 	public List<Products> getAllProducts(){
-		 return productRepository.findAll();
+		 List<Products> products = productRepository.findAll();
+		 System.out.println(products);
+		 return products;
 	}
 	public void updateProduct(Products product) {
 		 productRepository.save(product);

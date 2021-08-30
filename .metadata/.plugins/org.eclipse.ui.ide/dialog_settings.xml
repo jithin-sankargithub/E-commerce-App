@@ -6,6 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\ProjectDemo\Project files\discovery-server"/>
 			<item value="D:\ProjectDemo\Project files\wallet-service"/>
 			<item value="D:\ProjectDemo\Project files\cartservice"/>
 			<item value="D:\ProjectDemo\Project files\cart-service"/>
