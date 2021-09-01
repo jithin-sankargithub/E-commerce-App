@@ -18,7 +18,7 @@ import com.shopping.walletservice.model.WalletRecharge;
 import com.shopping.walletservice.service.WalletService;
 
 @RestController
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
 @RequestMapping("/wallet")
 public class WalletController {
 	

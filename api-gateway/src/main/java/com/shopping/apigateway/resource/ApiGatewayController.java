@@ -18,7 +18,6 @@ import com.shopping.apigateway.service.UserService;
 import com.shopping.apigateway.utility.JWTUtility;
 
 @RestController
-@RequestMapping("/api")
 public class ApiGatewayController {
 	
 	@Autowired

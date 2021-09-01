@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/cart")
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
 public class CartController {
 	
 	@Autowired

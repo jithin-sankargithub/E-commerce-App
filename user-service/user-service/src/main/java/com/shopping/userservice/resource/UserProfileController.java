@@ -16,7 +16,7 @@ import com.shopping.userservice.model.UserProfile;
 import com.shopping.userservice.service.UserProfileServiceImpl;
 
 @RestController
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
 @RequestMapping("/users")
 public class UserProfileController {
 	

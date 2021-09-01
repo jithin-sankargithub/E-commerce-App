@@ -29,6 +29,12 @@ public class OrderCheckout {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+	@Override
+	public String toString() {
+		return "OrderCheckout [userId=" + userId + ", paymentType=" + paymentType + ", address=" + address + "]";
+	}
+	
 	
 	
 
