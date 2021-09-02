@@ -2,15 +2,23 @@ package com.shopping.userservice.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import io.swagger.annotations.ApiModelProperty;
 @Document(collection = "Users")
 public class UserProfile {
 	@Id
 	private String id;
+	@ApiModelProperty(notes = "The username of the user")
 	private String userName;
+	@ApiModelProperty(notes = "The password of the user")
 	private String password;
+	@ApiModelProperty(notes = "The email of the user")
 	private String email;
+	@ApiModelProperty(notes = "The mobile number of the user")
 	private String mobileNo;
+	@ApiModelProperty(notes = "The address of the user")
 	private Address address;
+	@ApiModelProperty(notes = "The role of the user")
 	private String role;
 	
 	public UserProfile() {

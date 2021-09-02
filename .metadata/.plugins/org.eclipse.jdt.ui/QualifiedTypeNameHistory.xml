@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.eshopping.cartservice.model.CartItem"/>
-    <fullyQualifiedTypeName name="com.eshopping.cartservice.service.CartService"/>
-    <fullyQualifiedTypeName name="com.eshopping.cartservice.service.CartServiceImpl"/>
-    <fullyQualifiedTypeName name="com.eshopping.cartservice.repository.CartRepository"/>
     <fullyQualifiedTypeName name="com.eshopping.cartservice.model.Cart"/>
     <fullyQualifiedTypeName name="org.springframework.data.mongodb.core.mapping.Document"/>
     <fullyQualifiedTypeName name="org.springframework.data.annotation.Id"/>
-    <fullyQualifiedTypeName name="com.shopping.walletservice.repository.WalletRepository"/>
     <fullyQualifiedTypeName name="com.shopping.walletservice.repository.TransactionRepository"/>
     <fullyQualifiedTypeName name="com.shopping.walletservice.service.WalletService"/>
-    <fullyQualifiedTypeName name="com.shopping.walletservice.model.Wallet"/>
     <fullyQualifiedTypeName name="com.shopping.walletservice.model.WalletRecharge"/>
     <fullyQualifiedTypeName name="com.shopping.walletservice.service.TransactionService"/>
     <fullyQualifiedTypeName name="com.shopping.walletservice.service.TransactionServiceImpl"/>
@@ -50,14 +44,20 @@
     <fullyQualifiedTypeName name="io.swagger.annotations.ApiParam"/>
     <fullyQualifiedTypeName name="io.swagger.annotations.ApiModel"/>
     <fullyQualifiedTypeName name="io.swagger.annotations.ApiModelProperty"/>
-    <fullyQualifiedTypeName name="springfox.documentation.swagger2.annotations.EnableSwagger2"/>
     <fullyQualifiedTypeName name="com.shopping.productservice.service.ProductServiceImpl"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="org.springframework.boot.test.mock.mockito.MockBean"/>
     <fullyQualifiedTypeName name="com.shopping.productservice.service.repository.ProductRepository"/>
     <fullyQualifiedTypeName name="java.util.stream.Stream"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="com.shopping.productservice.model.Products"/>
-    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="com.shopping.userservice.service.UserProfileServiceImpl"/>
+    <fullyQualifiedTypeName name="com.shopping.userservice.repository.UserProfileRepository"/>
+    <fullyQualifiedTypeName name="com.shopping.userservice.model.UserProfile"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.shopping.walletservice.service.WalletServiceImpl"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.test.mock.mockito.MockBean"/>
+    <fullyQualifiedTypeName name="com.shopping.walletservice.repository.WalletRepository"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="com.shopping.walletservice.model.Wallet"/>
+    <fullyQualifiedTypeName name="springfox.documentation.swagger2.annotations.EnableSwagger2"/>
 </qualifiedTypeNameHistroy>

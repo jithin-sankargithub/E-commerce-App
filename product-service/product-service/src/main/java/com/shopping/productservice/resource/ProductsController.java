@@ -55,16 +55,6 @@ public class ProductsController {
 		}
 	}
 	
-	@GetMapping("/getproduct/{id}")
-	public ResponseEntity<?> getProductById(@PathVariable("id") String id) {
-		try {
-			Products prod = productService.getProductById(id);
-			return new ResponseEntity<>(prod, HttpStatus.OK);
-			}catch (Exception e) {
-				
-				return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
-			}
-	}
 	
 	@GetMapping("/getproductbyname/{name}")
 	public ResponseEntity<?> getProductByName(@PathVariable("name") String name) {

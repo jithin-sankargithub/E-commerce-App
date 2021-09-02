@@ -31,7 +31,7 @@ public class CartserviceApplication {
 	public Docket swaggerConfig() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.shopping"))
+				.apis(RequestHandlerSelectors.basePackage("com.eshopping"))
 				.build().apiInfo(apiDetails());
 	}
 	

@@ -1,5 +1,7 @@
 package com.shopping.userservice.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +20,8 @@ public class UserProfileServiceImpl implements UserProfileService {
 	}
 
 	@Override
-	public UserProfile getById(String id) {
-		return userProfileRepository.findById(id).get();
+	public Optional<UserProfile> getById(String id) {
+		return userProfileRepository.findById(id);
 	}
 
 	@Override
@@ -28,34 +30,8 @@ public class UserProfileServiceImpl implements UserProfileService {
 	}
 	
 	@Override
-	public UserProfile getUserByEmail(String email) {
+	public Optional<UserProfile> getUserByEmail(String email) {
 		return userProfileRepository.getUserByEmail(email);
 	}
-
-	@Override
-	public UserProfile getUserByMobileNo(String mobileNo) {
-		 return userProfileRepository.getUserByMobileNo(mobileNo);
-	}
-
-//	@Override
-//	public UserProfile getByUserName(String name) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
-	@Override
-	public void addNewMerchantProfile(UserProfile userprofile) {
-		  userProfileRepository.save(userprofile);
-	}
-
-	
-
-
-//
-//	@Override
-//	public List<UserProfile> viewAllUsers() {
-//		
-//		return userProfileRepository.findAll();
-//	}
 
 }

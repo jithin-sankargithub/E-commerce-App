@@ -18,17 +18,7 @@ public class TransactionServiceImpl implements TransactionService {
 	public List<Transaction> findTransactionsBySender(String sender) {
 		return transactionRepository.findTransactionsBySender(sender);
 	}
-
-	@Override
-	public Optional<Transaction> findTransactionById(String id) {
-		return transactionRepository.findById(id);
-	}
-
-	@Override
-	public void saveTransaction(Transaction transaction) {
-		transactionRepository.save(transaction);
-	}
-
+	
 	@Override
 	public String processTransaction(Transaction transaction) {
 		Transaction processTransaction = transactionRepository.save(transaction);

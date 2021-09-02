@@ -18,9 +18,6 @@ public class ProductServiceImpl {
 		  productRepository.save(product);
 	}
 	
-	public Products getProductById(String id) {
-		return productRepository.findById(id).get();
-	}
 	
 	public List<Products> getAllProducts(){
 		 List<Products> products = productRepository.findAll();
