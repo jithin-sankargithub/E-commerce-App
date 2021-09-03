@@ -20,7 +20,8 @@ public class Order {
 	public Order() {
 		
 	}
-	
+
+
 	public Order(Cart cart,OrderCheckout orderCheckout) {
 		this.id="";
 		this.userId=cart.getUserId();

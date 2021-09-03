@@ -6,6 +6,17 @@ public class OrderCheckout {
 	private String paymentType;
 	private Address address;
 	
+	public OrderCheckout() {
+		
+	}
+	
+	public OrderCheckout(String userId, String paymentType, Address address) {
+		super();
+		this.userId = userId;
+		this.paymentType = paymentType;
+		this.address = address;
+	}
+
 	public String getUserId() {
 		return userId;
 	}

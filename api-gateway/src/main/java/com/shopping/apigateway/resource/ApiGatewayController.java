@@ -40,7 +40,7 @@ public class ApiGatewayController {
 	@PostMapping("/authenticate")
 	 public JWTResponse authenticate(@RequestBody JWTRequest jwtRequest) throws Exception{
 
-        System.out.println("-----------------------done --------------");
+       
 
         try {
             authenticationManager.authenticate(
@@ -48,7 +48,7 @@ public class ApiGatewayController {
                             jwtRequest.getEmail(),
                             jwtRequest.getPassword())
 
-            );System.out.println("-----------------------done --------------");
+            );
         } catch (BadCredentialsException e){throw  new Exception("INVALID CREDENTIALS", e);}
 
         final UserDetails userDetails = userService.loadUserByUsername(jwtRequest.getEmail());

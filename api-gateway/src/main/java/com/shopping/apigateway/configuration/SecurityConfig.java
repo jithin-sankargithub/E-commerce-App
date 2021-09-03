@@ -27,16 +27,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private JWTFilter jwtFilter;
 	
-////for in-memory user id and pass word////
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
 		System.out.println("authenticated");
 
 		auth.userDetailsService(userService);
-//		auth.inMemoryAuthentication()
-//				.withUser("admin").password("admin").roles("admin").and()
-//				.withUser("user").password("user").roles("user");
 
 	}
 

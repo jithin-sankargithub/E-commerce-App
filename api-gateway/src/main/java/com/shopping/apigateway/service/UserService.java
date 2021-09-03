@@ -1,10 +1,10 @@
 package com.shopping.apigateway.service;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -30,7 +30,6 @@ public class UserService implements UserDetailsService{
 		 List<SimpleGrantedAuthority> authorities = Arrays.asList(new SimpleGrantedAuthority(user.get().getRole()));
 		 System.out.println(user.get().getEmail());
 		 System.out.println(user.get().getUserName());
-		 System.out.println(user.get().getPassword());
 		 System.out.println(user.get().getRole());
 		return new User(user.get().getEmail(), user.get().getPassword(),authorities);
 	}

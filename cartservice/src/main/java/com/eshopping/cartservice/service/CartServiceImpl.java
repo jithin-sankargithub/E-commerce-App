@@ -46,25 +46,6 @@ public class CartServiceImpl implements CartService{
 		return cartRepository.findCartByUserId(userId);
 	}
 	
-	public String processPayment(String sender, double amount) throws PaymentException {
-		
-		Transaction transaction = new Transaction();
-		transaction.setSender(sender);
-		transaction.setAmount(amount);
-		transaction.setReceiver("ShoppingZone");
-		try {
-		String uri = "http://wallet-service/wallet/transfer";
-		ResponseEntity<String> response = restTemplate.postForEntity(uri, transaction, String.class);
-		String res = response.getBody();
-		return res;
-		}catch (HttpClientErrorException | HttpServerErrorException httpClientOrServerExc) {
-			throw new PaymentException(httpClientOrServerExc.getResponseBodyAsString());
-		}catch (Exception e) {
-			throw new PaymentException("Wallet Unavailable");
-		}
-		
-	}
-
 	@Override
 	public ResponseEntity<String> checkout(OrderCheckout orderCheckout) throws PaymentException {
 		Optional<Cart> userCart = this.findCartByUserId(orderCheckout.getUserId());
@@ -84,6 +65,27 @@ public class CartServiceImpl implements CartService{
 		}
 		
 	}
+	
+	public String processPayment(String sender, double amount) throws PaymentException {
+		
+		Transaction transaction = new Transaction();
+		transaction.setSender(sender);
+		transaction.setAmount(amount);
+		transaction.setReceiver("ShoppingZone");
+		try {
+		String uri = "http://wallet-service/wallet/transfer";
+		ResponseEntity<String> response = restTemplate.postForEntity(uri, transaction, String.class);
+		String res = response.getBody();
+		return res;
+		}catch (HttpClientErrorException | HttpServerErrorException httpClientOrServerExc) {
+			throw new PaymentException(httpClientOrServerExc.getResponseBodyAsString());
+		}catch (Exception e) {
+			throw new PaymentException("Wallet Unavailable");
+		}
+		
+	}
+
+	
 
 
 
