@@ -55,7 +55,7 @@ class UserServiceApplicationTests {
 		Address address = new Address("674W","Ajman","Hanisto","rory","95858");
 		Optional<UserProfile> user= Optional.of(new UserProfile("5748484","Rithwik","rith","rithwik@mail.com","9898889",address,"customer"));
 		String email ="rithwik@mail.com";
-		when(profileRepository.findById(email)).thenReturn(user);
+		when(profileRepository.getUserByEmail(email)).thenReturn(user);
 	}
 
 }

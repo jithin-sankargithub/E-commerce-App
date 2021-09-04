@@ -20,10 +20,6 @@ public class OrderServiceImpl implements OrderService{
 		return orderRepository.findOrdersByUserId(userId);
 	}
 
-//	@Override
-//	public Optional<Order> findById(String id) {
-//		return orderRepository.findById(id);
-//	}
 
 	@Override
 	public void addOrder(Order order) {

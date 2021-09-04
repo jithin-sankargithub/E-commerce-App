@@ -24,11 +24,6 @@ public class OrderController {
 		return orderServiceImpl.findAllUserOrders(userId);
 	}
 	
-//	@GetMapping("/order/{id}")
-//	public Optional<Order> findOrderById(@PathVariable("id") String id){
-//		return orderServiceImpl.findById(id);
-//	}
-//	
-	
+
 
 }

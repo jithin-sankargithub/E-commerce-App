@@ -8,7 +8,6 @@ import com.eshopping.cartservice.model.Order;
 public interface OrderService {
 	
 	public List<Order> findAllUserOrders(String userId);
-//	public Optional<Order> findById(String id);
 	public void addOrder(Order order);
 
 	

@@ -32,12 +32,6 @@ public class WalletServiceImpl implements WalletService {
 		
 	}
 	
-	@Override
-	public void updateWallet(Wallet wallet) {
-		walletRepository.save(wallet);
-		
-	}
-
 	
     //Method to Recharge User Wallet
 	@Override
@@ -48,7 +42,7 @@ public class WalletServiceImpl implements WalletService {
 			//Adding recharge amount to current Wallet
 			double updatedBalance = currentWallet.getBalance()+(recharge.getAmount());
 			currentWallet.setBalance(updatedBalance);
-			this.updateWallet(currentWallet);
+			walletRepository.save(currentWallet);
 			
 		}else {
 			System.out.println("No wallet available");
@@ -66,7 +60,7 @@ public class WalletServiceImpl implements WalletService {
 				double updatedBalance = userWallet.getBalance()-transaction.getAmount();
 				userWallet.setBalance(updatedBalance);
 				String transactionId = transactionService.processTransaction(transaction);
-				this.updateWallet(userWallet);
+				walletRepository.save(userWallet);
 				return ResponseEntity.ok().body(transactionId);
 			}
 			else {
