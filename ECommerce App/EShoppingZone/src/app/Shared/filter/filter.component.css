@@ -1,0 +1,25 @@
+#menu-outer {
+	height: 84px;
+	
+}
+
+.table {
+	display: table; 
+	margin: 0 auto;
+}
+
+ul#horizontal-list {
+	min-width: 696px;
+	list-style: none;
+	padding-top: 10px;
+	}
+	ul#horizontal-list li {
+		display: inline;
+	}
+	button{
+		margin-right: 5rem;
+		border-radius: 60px;
+	}
+	
+
+

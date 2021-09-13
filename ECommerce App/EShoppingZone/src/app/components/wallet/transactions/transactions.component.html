@@ -1,0 +1,29 @@
+<h2>Wallet Transactions</h2>
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            
+              
+                <table >
+                    <tr  class="merchantproduct">
+                        <th width="60%"><strong>TransactionId </strong></th>
+                        <th width="30%">Amount</th>
+                        
+                        
+                    </tr>
+
+                    <tr *ngFor="let tran of transactions">
+                        <td>
+                            {{tran.id}}
+                        </td>
+                        <td>
+                            {{tran.amount}}
+                        </td>
+                   </table>
+                   
+                   <hr>
+                </div>
+            
+    </div>
+</div>
+

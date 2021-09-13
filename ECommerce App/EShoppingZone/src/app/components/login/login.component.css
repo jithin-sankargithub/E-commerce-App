@@ -1,0 +1,50 @@
+body {
+    /* background: url(../../../assets/images/loginbackground.jpg); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+  .prod{
+    margin-left: 32%;
+    margin-right: 32%;
+    padding-top: 4rem;
+    
+  }
+  .card{
+    border-color: cornflowerblue;
+    box-shadow: 2px 2px 2px black;
+    background: url(../../../assets/images/loginbackground.jpg);  
+    background-position: center;
+    
+  }
+  button{
+    margin-top: 2px;
+    margin-bottom: 1rem;
+    border-radius: 60px;
+  }
+  .form-group{
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+  }
+  .head{
+    color: darkblue;
+    text-align: center;
+    font-family: 'Times New Roman';
+  }
+  input{
+    padding-left: 1rem;
+    border-radius: 60px;
+  }
+  .git{
+    display: flex;
+    justify-content: center;
+  }
+  .log{
+    text-align: center;
+  }
+  .zone{
+    color:rgb(14, 10, 19);
+    text-align: center;
+    font-family: 'Times New Roman';
+    text-decoration: underline;
+  }

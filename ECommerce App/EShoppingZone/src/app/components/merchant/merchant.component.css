@@ -1,0 +1,24 @@
+#add{
+    margin-top: 2rem;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-top: black;
+    background-color: rgb(243, 239, 233);
+    font-family: 'Times New Roman';
+    font-weight: bold;
+}
+table td {
+    border: 2px solid #ddd;
+    padding: 8px;
+}
+th{
+    border: 2px solid #ddd;
+    padding: 8px;
+    background-color: cadetblue;
+}

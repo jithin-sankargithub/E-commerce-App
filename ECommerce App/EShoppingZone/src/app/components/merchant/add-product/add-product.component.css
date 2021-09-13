@@ -1,0 +1,28 @@
+.prod{
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.card{
+    border-color: cornflowerblue;
+    background: url(../../../../assets/images/loginbackground.jpg);
+    
+}
+button{
+    margin-top: 2px;
+    margin-bottom: 1rem;
+}
+.form-group{
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+}
+.head{
+    color: darkblue;
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: 2rem;
+}
+label{
+    font-family: 'Times New Roman';
+}

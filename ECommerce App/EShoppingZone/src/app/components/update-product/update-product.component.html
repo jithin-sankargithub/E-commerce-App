@@ -1,0 +1,48 @@
+<div class="prod">
+    <div class="card">
+    <div class="container-fluid">
+        <h2 class="head">Update Product</h2>
+        <form [formGroup]="productForm"  (ngSubmit)="updateProduct()" novalidate>
+          <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" placeholder="Product Name" [class.is-invalid]="name!.invalid && name!.touched" formControlName="name" class="form-control">
+            <div *ngIf="name!.invalid && name!.touched">
+              <small class="text-danger" *ngIf="name!.errors?.required">Please enter product name</small>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Product Category</label>
+            <p><select placeholder="Product Category" formControlName="category">
+                <option value="Electronics">Electronics</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Books">Books</option>
+             </select></p>
+          </div>
+    
+         <div class="form-group">
+            <label>Product Description</label>
+           <input type="text" placeholder="Product Description" [class.is-invalid]="description!.invalid && description!.touched" formControlName="description" class="form-control">
+            <small class="text-danger" [class.d-none]="description!.valid || description!.untouched">Please enter product description</small>
+             </div> 
+    
+             <div class="form-group">
+                <label>Product price</label>
+               <input type="text" placeholder="Product Price" [class.is-invalid]="price!.invalid && price!.touched" formControlName="price" class="form-control">
+               <div *ngIf="price!.touched && price!.invalid"> 
+               <small *ngIf="price!.errors?.required" class="text-danger">Please enter product price</small>
+               <small *ngIf="price!.errors?.pattern" class="text-danger">Enter only digits</small>
+               </div>
+                 </div> 
+    
+                 <div class="form-group">
+                    <label>Product image</label>
+                   <input type="text" placeholder="Product Image" [class.is-invalid]="image!.invalid && image!.touched" formControlName="image" class="form-control">
+                    <small class="text-danger" [class.d-none]="image!.valid || image!.untouched">Please enter product description</small>
+                     </div> 
+          <button class="btn btn-outline-success" [disabled]="productForm.invalid" type="submit">Update Product</button>
+        </form>
+        </div>
+      </div>
+    </div>
+    
+    

@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <h1>EShoppingZone Wallet</h1>
+    <div *ngIf="!customerWallet">
+        <h2 style="font-family: 'Times New Roman';">Create your EShoppinZone Wallet here</h2>
+          <form [formGroup]="userWallet" (ngSubmit)="createWallet()" novalidate>
+              <div class="form-group">
+                  <label>Amount to be added</label>
+                  <input type="text" formControlName="amount" class="form-control" placeholder="Amount in Rupees" >
+                  <div *ngIf="amount!.invalid && amount!.touched">
+                    <small class="text-danger" *ngIf="amount!.errors?.required">Please enter Amount</small>
+                    <small class="text-danger" *ngIf="amount!.errors?.pattern">Please Enter digits</small>
+                  </div>
+              </div>
+              <button class="btn btn-primary " [disabled]="userWallet.invalid" type="submit">Create Wallet</button>
+          </form>
+    </div>
+
+    <div *ngIf="customerWallet">
+        <h2 style="font-family: 'Times New Roman';">Recharge your wallet here</h2>
+        <form [formGroup]="rechargeForm" (ngSubmit)="rechargeWallet()" novalidate>
+            <div class="form-group">
+                <label>Amount to be added</label>
+                <input type="text" formControlName="amount" class="form-control" placeholder="Amount in Rupees">
+                <div *ngIf="amount!.invalid && amount!.touched">
+                  <small class="text-danger" *ngIf="amount!.errors?.required">Please enter Amount</small>
+                  <small class="text-danger" *ngIf="amount!.errors?.pattern">Please Enter digits</small>
+                </div>
+            </div>
+            <p>Available Balance : {{customerWallet.balance | currency:'INR'}}</p>
+            <button class="btn btn-primary " [disabled]="rechargeForm.invalid" type="submit">Add Money</button>
+        </form>
+         <p class="pre">
+             <button class="btn btn-info" routerLink="/wallettransactions">Previous Transactions</button>
+         </p>
+    </div>
+    </div>
+    

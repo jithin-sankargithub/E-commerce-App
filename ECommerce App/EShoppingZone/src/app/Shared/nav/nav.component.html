@@ -1,0 +1,24 @@
+<div>
+  <nav>
+    <ul>
+       <li class="logo">EShoppingZone</li>
+       <li class="btn"><span class="fas fa-bars"></span></li>
+       <div class="items">
+          <li><a routerLink="/products">Home</a></li>
+          <li><a routerLink="/useraccount" *ngIf="userRole=='customer'">My Account</a></li>
+          <li><a routerLink="/merchant" *ngIf="userRole=='merchant'">Inventory</a></li> 
+          <li><a routerLink="/login" *ngIf="!userId">Login</a></li>
+          <li><a routerLink="/login" *ngIf="userId" (click)="logout()" >Logout</a></li>
+          <li><a routerLink="/cart">Cart</a></li>
+       </div>
+      </ul>
+ </nav>
+</div> 
+
+  <!-- <li class="search-icon"> -->
+          <!-- <input type="search" placeholder="Search"> -->
+          <!-- <label class="icon"> -->
+          <!-- <span class="fas fa-search">Go</span> -->
+          <!-- <button class="btn btn-outline-success me-4" type="submit">Search</button> -->
+          <!-- </label> -->
+       <!-- </li> -->

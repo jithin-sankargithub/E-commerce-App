@@ -1,0 +1,58 @@
+table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-top: black;
+     background-color: rgb(243, 239, 233); 
+
+}
+table td {
+    border: 2px solid #ddd;
+    padding: 8px;
+}
+th{
+    border: 2px solid #ddd;
+    padding: 8px;
+    background-color: cadetblue;
+}
+.prod{
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.card{
+    border-color: cornflowerblue;
+    background: url(../../../assets/images/loginbackground.jpg);
+    
+}
+button{
+    margin-top: 2px;
+    margin-bottom: 1rem;
+}
+.form-group{
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+}
+.head{
+    color: darkblue;
+    text-align: center;
+    font-family: 'Times New Roman';
+}
+body{
+    background: url(../../../assets/images/loginbackground.jpg);
+    margin: none;
+    padding: none;
+}
+.wallet{
+    font-weight: bold;
+}
+.note{
+    font-weight: bold;
+}
+.main-content{
+    font-family: 'Times New Roman';
+}

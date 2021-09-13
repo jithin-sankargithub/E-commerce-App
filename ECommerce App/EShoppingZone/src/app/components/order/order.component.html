@@ -1,0 +1,138 @@
+<body>
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            
+
+                <table class="merchant">
+                    <tr  class="merchantproduct">
+                        <th width="50%"><strong>Product Name</strong></th>
+                        <th width="50%">Quantity</th>
+                    </tr>
+                    <!-- <div *ngFor="let cartProduct of cartList"> -->
+                    <tr *ngFor="let product of cartList">
+                        
+                         <td>
+                            {{product.name}}
+                        </td>
+                        <td>
+                            {{product.quantity}}
+                        </td> 
+                      </tr>
+                    
+                        <p class="wallet">
+                          Total Amount : {{totalPrice}}
+                      </p>
+                      </table>
+                    </div>
+            
+    </div>
+    </div>
+    <!-- Wallet amount less than order amount and wallet doesnt exist-->
+     <!-- <div *ngIf="balanceCheck && !walletBalance ">
+<form [formGroup]=paymentform>
+  <div class="form-group">
+    <label>Select Payment Method</label>
+    <p><select placeholder="Payment method" formControlName="payment">
+        <option value="COD">Cash on delivery</option>
+     </select></p>
+  </div>
+
+</form>
+<div class="wallet">
+    Wallet not available for particular order
+</div>
+</div>  -->
+<!-- ***** -->
+<!-- wallet Available situation -->
+<div *ngIf="walletBalance>=totalPrice">
+  <form [formGroup]=paymentform>
+    <div class="form-group">
+      <label>Select Payment Method</label>
+      <p><select placeholder="Payment method" formControlName="payment">
+          <option value="WALLET" [disabled]="balanceCheck">Wallet</option>
+          <option value="COD">Cash on delivery</option>
+       </select></p>
+    </div>
+  
+  </form>
+  <div class="wallet">
+    Current Wallet Balance is {{walletBalance | currency:'INR'}}
+  </div>
+  </div>
+
+  <div *ngIf="walletBalance<totalPrice">
+    <form [formGroup]=paymentform>
+      <div class="form-group">
+        <label>Select Payment Method</label>
+        <p><select placeholder="Payment method" formControlName="payment">
+            <option value="COD">Cash on delivery</option>
+         </select></p>
+      </div>
+    
+    </form>
+    <!-- <div class="wallet">
+      Current Wallet Balance is {{walletBalance | currency:'INR'}}
+    </div> -->
+    </div>
+
+  <!-- <div *ngIf="walletBalance==0">
+    <form [formGroup]=paymentform>
+      <div class="form-group">
+        <label>Select Payment Method</label>
+        <p><select placeholder="Payment method" formControlName="payment">
+            <option value="COD">Cash on delivery</option>
+         </select></p>
+      </div>
+    
+    </form>
+   
+    </div> -->
+  <!-- ****** -->
+  
+
+<div class="prod">
+    <div class="card">
+    <div class="container-fluid">
+        <h2 class="head">Delivery <Address></Address></h2>
+        <form [formGroup]="checkoutForm"  (ngSubmit)="checkout()" novalidate>
+          <div class="form-group">
+            <input type="text" placeholder="House Number" [class.is-invalid]="houseNumber!.invalid && houseNumber!.touched" formControlName="houseNumber" class="form-control">
+            <div *ngIf="houseNumber!.invalid && houseNumber!.touched">
+              <small class="text-danger" *ngIf="houseNumber!.errors?.required">Include House Number</small>
+            </div>
+          </div>
+
+         <div class="form-group">
+           <input type="text" placeholder="Street Name" [class.is-invalid]="street!.invalid && street!.touched" formControlName="street" class="form-control">
+            <small class="text-danger" [class.d-none]="street!.valid || street!.untouched"></small>
+             </div> 
+    
+             <div class="form-group">
+               <input type="text" placeholder="City" [class.is-invalid]="city!.invalid && city!.touched" formControlName="city" class="form-control">
+               <small class="text-danger" [class.d-none]="city!.valid || city!.untouched"></small>
+               </div>
+
+               <div class="form-group">
+                <input type="text" placeholder="State" [class.is-invalid]="state!.invalid && state!.touched" formControlName="state" class="form-control">
+                <small class="text-danger" [class.d-none]="state!.valid || state!.untouched"></small>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" placeholder="Pin Code" [class.is-invalid]="pincode!.invalid && pincode!.touched" formControlName="pincode" class="form-control">
+                    <small class="text-danger" [class.d-none]="pincode!.valid || pincode!.untouched"></small>
+                    </div>
+
+          <button class="btn btn-success" [disabled]="checkoutForm.invalid" type="submit">Confirm Order</button>
+          <p>
+          <small class="note" *ngIf="balanceCheck">Wallet payment will be available only when wallet balance is sufficient to place the order</small>
+        </p>
+        </form>
+        </div>
+      </div>
+    </div>
+
+    
+  
+
+</body>

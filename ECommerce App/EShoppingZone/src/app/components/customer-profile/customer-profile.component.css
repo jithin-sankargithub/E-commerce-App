@@ -1,0 +1,33 @@
+.profile{
+    padding-top: 10px;
+    padding-left: 30px;
+}
+button{
+    margin-right: 18rem;
+    border-radius: 60px;
+}
+.prod{
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 2rem;
+    
+}
+.card{
+    border-color: cornflowerblue;
+    background: url(../../../assets/images/loginbackground.jpg);
+    
+}
+
+.form-group{
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+}
+.head{
+    color: darkblue;
+    text-align: center;
+    font-family: 'Times New Roman';
+}
+h1{
+    font-family: 'Times New Roman';
+    font-weight: bolder;
+}

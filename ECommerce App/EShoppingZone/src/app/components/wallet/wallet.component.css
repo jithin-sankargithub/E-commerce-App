@@ -1,0 +1,18 @@
+input{
+    max-width: 20%;
+}
+.pre{
+    margin-top: 3rem;
+}
+button{
+    margin-top: 2px;
+}
+h4{
+    font-family: 'Times New Roman';
+}
+h1{
+    text-align: center;
+    font-family: 'Times New Roman';
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

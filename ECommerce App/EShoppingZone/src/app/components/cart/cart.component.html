@@ -1,0 +1,79 @@
+<body>
+    
+
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+
+            <div *ngIf="addedCartProducts.length != 0">
+
+                <table class="cart">
+                    <tr  class="cartproduct">
+                        <th width="60%"><strong>Cart Details</strong></th>
+                        <th width="30%"></th>
+                    </tr>
+
+                    <tr *ngFor="let product of addedCartProducts">
+                        
+                        <td>
+                            <p>Product Name: <strong>{{product.name}}</strong></p>
+                            <p> Category: <strong>{{product.category}}</strong></p>
+                        </td>
+                        <td>
+                            <div class="items">
+
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <button (click)="addQuantity(product)" class="btn btn-primary btn-sm"><!-- -->
+                                            <!-- <i class="fas fa-plus"></i> -->
+                                         Add
+                                        </button>
+                                    </div>
+
+                                    <div class="col ml-4 mr-2">
+                                        {{product.quantity}}
+                                    </div>
+
+                                    <div class="col">
+                                        <button (click)="reduceQuantity(product)" class="btn btn-primary btn-sm">
+                                            <!-- <i class="fas fa-minus"></i> -->
+                                            Delete
+                                        </button>
+                                    </div>
+
+                                    <div class="col-8"></div>
+                                </div>
+
+                            </div>
+
+                           
+
+                            <p class="mt-2">Item total: {{product.quantity * product.price | currency: 'INR'}}</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"></td>
+                        <td style="font-weight: bold">
+                            <!-- <p>Total Quantity: {{ totalQuantity }}</p> -->
+                            
+                            <p>Total Price: {{ totalPrice | currency: 'INR'}} </p>
+                        </td>
+                    </tr>
+
+                </table>
+                <div class="check">
+                    <button (click)="moveToCheckout()" class="btn btn-success" *ngIf="userId && userRole=='customer'">Move to Checkout</button>
+                </div>
+
+            </div>
+
+            <!-- if cart is empty then display a message -->
+             <div *ngIf="addedCartProducts.length == 0" class="alert alert-danger" role="alert">
+                Nothing here...
+            </div> 
+
+        </div>
+    </div>
+</div>
+</body>

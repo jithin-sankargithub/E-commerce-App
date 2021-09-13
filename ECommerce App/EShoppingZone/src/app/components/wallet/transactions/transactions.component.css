@@ -1,0 +1,19 @@
+h2{
+    text-align: center;
+    font-family: 'Times New Roman';
+    color:crimson;
+    margin-top: 10px
+}
+table{
+  background: url(../../../../assets/images/loginbackground.jpg);
+  border: 1px solid black;
+  margin-top: 70px;
+  margin-bottom: 50px;
+  margin-right: 30%;
+  margin-left: 30%;
+  background-color: lightblue;
+}
+th, td {
+    border: 1px solid black;
+    text-align: center;
+}

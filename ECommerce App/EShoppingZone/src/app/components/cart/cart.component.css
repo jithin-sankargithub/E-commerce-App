@@ -1,0 +1,16 @@
+.cart{
+    background-color: rgb(224, 224, 224);
+}
+.cartproduct{
+    background-color: beige;
+    text-align: center;
+}
+.check{
+    text-align: right;
+}
+body{
+    background: url(../../../assets/images/loginbackground.jpg);
+}
+.main-content{
+    font-family: 'Times New Roman';
+}

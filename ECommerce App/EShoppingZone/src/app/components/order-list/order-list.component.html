@@ -1,0 +1,36 @@
+<h2>Order Details</h2>
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid" *ngFor="let order of orderItems">
+            
+              
+                <table >
+                    <tr  class="merchantproduct">
+                        <th width="30%"><strong>Product Name</strong></th>
+                        <th width="25%">Quantity</th>
+                        <th width="25%">Unit Price</th>
+                        
+                    </tr>
+
+                    <tr *ngFor="let item of order.cartItems">
+                        
+                        <td>
+                            {{item.name}}
+                        </td>
+                        <td>
+                            {{item.quantity}}
+                        </td>
+                    
+
+                    <td>
+                       {{item.price}}
+                    </td>
+                    
+                   </table>
+                   <p>Total Amount : {{order.totalPrice}}</p>
+                   <hr>
+                </div>
+            
+    </div>
+</div>
+
