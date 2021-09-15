@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eshopping.cartservice.exception.PaymentException;
+
 import com.eshopping.cartservice.model.Cart;
 import com.eshopping.cartservice.model.OrderCheckout;
 import com.eshopping.cartservice.service.CartServiceImpl;
@@ -48,7 +48,7 @@ public class CartController {
 	@PostMapping("/checkout")
 	@ApiOperation(value = "Proceeding to checkout",
 	notes = "Customer can confirm the order and proceed to checkout")
-	public ResponseEntity<String> checkout(@RequestBody OrderCheckout orderCheckout) throws PaymentException{
+	public ResponseEntity<String> confirmOrder(@RequestBody OrderCheckout orderCheckout){
 		return cartServiceImpl.checkout(orderCheckout);
 	}
 

@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -27,13 +27,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private JWTFilter jwtFilter;
 	
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+	
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
-		System.out.println("authenticated");
 
-		auth.userDetailsService(userService);
+		auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
 
 	}
 
@@ -49,6 +53,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.cors().and().csrf().disable()                .authorizeRequests()
 				.antMatchers("/authenticate")
 				.permitAll()
+				.antMatchers("/encode")
+				.permitAll()
 				.antMatchers("/product/getallproducts")
 				.permitAll()
 				.antMatchers("/product/getproductbycategory/**")
@@ -62,9 +68,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
        }
 
-	@Bean
-	public PasswordEncoder getPasswordEncoder() {
-		return NoOpPasswordEncoder.getInstance();
-	}
+//	@Bean
+//	public PasswordEncoder getPasswordEncoder() {
+//		return NoOpPasswordEncoder.getInstance();
+//	}
+	
+
 
 }

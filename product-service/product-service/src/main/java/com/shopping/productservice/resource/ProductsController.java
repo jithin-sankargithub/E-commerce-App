@@ -56,19 +56,6 @@ public class ProductsController {
 	}
 	
 	
-	@GetMapping("/getproductbyname/{name}")
-	public ResponseEntity<?> getProductByName(@PathVariable("name") String name) {
-		try {
-		Products prod = productService.findProductByName(name);
-		return new ResponseEntity<>(prod, HttpStatus.OK);
-		}catch (Exception e) {
-			
-			return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-		
-		
-	}
-	
 	@GetMapping("/getproductbycategory/{category}")
 	@ApiOperation(value = "Find All products by their category",
 	notes = "Provide a category to get all the products based on that category",
@@ -84,16 +71,22 @@ public class ProductsController {
 			}
 	}
 	
-	@PutMapping("/updateproduct")
-	public void updateProduct(@RequestBody Products product) {
-		 productService.updateProduct(product);
-	}
+	
 	
 	@DeleteMapping("/deleteproduct/{id}")
 	@ApiOperation(value = "Delete a product",
 	notes = "Delete a particular product by providing the id of the product")
 	public void deleteProduct(@PathVariable("id") String id) {
 		productService.deleteProduct(id);
+	}
+	
+	@GetMapping("/getproductbyid/{id}")
+	public Optional<Products> getProductById(@PathVariable("id") String id) { 
+		return  productService.getProductById(id);
+	}
+	@PutMapping("/updateproduct")
+	public void updateProduct(@RequestBody Products product) {
+		productService.updateProduct(product);
 	}
 	
 

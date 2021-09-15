@@ -10,7 +10,6 @@ import com.shopping.productservice.model.Products;
 @Repository
 public interface ProductRepository extends MongoRepository<Products,String> {
 	
-	public Products findProductByName(String name);
 	public List<Products> findProductByCategory(String category);
 	
 

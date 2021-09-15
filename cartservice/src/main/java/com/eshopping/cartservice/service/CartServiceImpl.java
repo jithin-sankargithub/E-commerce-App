@@ -6,11 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import com.eshopping.cartservice.exception.PaymentException;
+
 import com.eshopping.cartservice.model.Cart;
 import com.eshopping.cartservice.model.Order;
 import com.eshopping.cartservice.model.OrderCheckout;
@@ -47,7 +45,7 @@ public class CartServiceImpl implements CartService{
 	}
 	
 	@Override
-	public ResponseEntity<String> checkout(OrderCheckout orderCheckout) throws PaymentException {
+	public ResponseEntity<String> checkout(OrderCheckout orderCheckout){
 		Optional<Cart> userCart = this.findCartByUserId(orderCheckout.getUserId());
 		System.out.println(orderCheckout.getPaymentType());
 		if(userCart.isPresent()) {
@@ -66,22 +64,18 @@ public class CartServiceImpl implements CartService{
 		
 	}
 	
-	public String processPayment(String sender, double amount) throws PaymentException {
+	public String processPayment(String sender, double amount) {
 		
 		Transaction transaction = new Transaction();
 		transaction.setSender(sender);
 		transaction.setAmount(amount);
-		transaction.setReceiver("ShoppingZone");
-		try {
+		transaction.setReceiver("EShoppingZone");
+		
 		String uri = "http://wallet-service/wallet/transfer";
 		ResponseEntity<String> response = restTemplate.postForEntity(uri, transaction, String.class);
 		String res = response.getBody();
 		return res;
-		}catch (HttpClientErrorException | HttpServerErrorException httpClientOrServerExc) {
-			throw new PaymentException(httpClientOrServerExc.getResponseBodyAsString());
-		}catch (Exception e) {
-			throw new PaymentException("Wallet Unavailable");
-		}
+    	
 		
 	}
 
